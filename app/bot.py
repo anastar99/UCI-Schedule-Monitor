@@ -19,6 +19,8 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    if message.content.startswith('!help'):
+        await message.channel.send(f"Commands:\n```!help: List of commands\n!add: Add class code to queue\n!delete: Remove class code from queue\n!queue: Show class codes in queue\n!clear_all: Clear all classes in queue\n!watch: Monitor classes in queue```")
     if message.content.startswith('!add'):
         class_code = message.content[5:]
         if class_code.isdigit() and len(class_code) == 5:
