@@ -25,13 +25,12 @@ def getEnrollInfo(year : str, code : str) -> dict:
     lst = []
     for i in r1:
         lst.append(i.string)
-
     data_dict = {}
     b_index = lst.index("Bookstore")
-    data_dict["max_enroll"] = str(lst[b_index-6])
-    data_dict["enroll"] = str(lst[b_index-5])
-    data_dict["waitlist"] = str(lst[b_index-4])
-    data_dict["requested"] = str(lst[b_index-3])
+    data_dict["max_enroll"] = str(lst[b_index-5])
+    data_dict["enroll"] = str(lst[b_index-4])
+    data_dict["waitlist"] = str(lst[b_index-3])
+    data_dict["requested"] = str(lst[b_index-2])
     return data_dict
 
 def checkSpace(jsondata: dict) -> bool:
