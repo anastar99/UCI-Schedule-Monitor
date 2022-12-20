@@ -86,7 +86,7 @@ async def on_message(message):
                 if spot:
                     await message.channel.send(f"Spot found for class code {code}. Stopping watch")
                     flag = False
-            await asyncio.sleep(5)
+            await asyncio.sleep(300)
 
 if __name__ == "__main__":
     bot.run(discordToken)
