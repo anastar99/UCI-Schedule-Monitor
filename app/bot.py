@@ -8,7 +8,6 @@ import asyncio
 bot=commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 year = getYear()
-flag = True
 
 @bot.event
 async def on_ready():
@@ -66,7 +65,7 @@ async def on_message(message):
         await message.channel.send(f"Watching initiated for following classes:")
         for i in codes:
             await message.channel.send(f"{i}")
-        global flag
+        flag = True
         button1 = Button(label="Stop Watching", style= discord.ButtonStyle.blurple, custom_id="1")
         async def button_action(interaction):
             message.content = "!stop"
